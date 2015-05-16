@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+		<title>Express.js Book - Express Web Application Development &#187; All Posts</title>
+		<atom:link href="http://expressjs-book.com/forums/feed/" rel="self" type="application/rss+xml" />
+		<link>http://expressjs-book.com/forums/feed/</link>
+		<description></description>
+		<pubDate>Sat, 16 May 2015 19:56:34 +0000</pubDate>
+		<generator>http://bbpress.org/?v=2.5.4-5380</generator>
+		<language>en-US</language>
+
+		
+		
+					
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-155</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-155</link>
+					<pubDate>Sun, 06 Apr 2014 05:33:08 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>It would be definitely possible, but I am not aware of any implementation yet. The reason Redis and MongoDB are chosen is because they are faster and simpler to set up than MySQL, for data set like user sessions.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-154</guid>
+					<title><![CDATA[Reply To: Replacement for bodyParser / connect.multipart()]]></title>
+					<link>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-154</link>
+					<pubDate>Sun, 30 Mar 2014 17:16:49 +0000</pubDate>
+					<dc:creator>Jon J</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I created an example that uses Express &amp; Multer &#8211; very simple, avoids all Connect warnings</p>
+<p><a href="https://github.com/jonjenkins/express-upload" rel="nofollow">https://github.com/jonjenkins/express-upload</a></p>
+<p>Might help someone.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-153</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-153</link>
+					<pubDate>Sun, 23 Mar 2014 19:26:10 +0000</pubDate>
+					<dc:creator>shawninder</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You give examples for using Redis and Mongo as stores for sessions. Would it be possible to use MySQL?</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-152</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-152</link>
+					<pubDate>Mon, 24 Feb 2014 15:58:31 +0000</pubDate>
+					<dc:creator>augusto.rene@lunanegra.net</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks for the book is really grate.<br />
+I wonder about the TTL. I can&#8217;t find a good and clear documentation for connect-mongo and ofte is confusing.&#8221;expires&#8221;, &#8220;originalMaxAge&#8221; and  &#8220;cookie.expires&#8221;.<br />
+ It would be nice if you take a couple of examples how to configure the duration. I can see that MongoDB store the session like:<br />
+{<br />
+  &#8220;_id&#8221; : &#8220;jvi555cr9lQGe3+kR0Q0c/wP&#8221;,<br />
+  &#8220;session&#8221; : &#8220;{\&#8221;cookie\&#8221;:{\&#8221;originalMaxAge\&#8221;:65000,\&#8221;expires\&#8221;:\&#8221;2014-02-24T15:50:44.250Z\&#8221;,\&#8221;httpOnly\&#8221;:true,\&#8221;path\&#8221;:\&#8221;/\&#8221;},\&#8221;user\&#8221;:{\&#8221;firstName\&#8221;:\&#8221;Testman\&#8221;,\&#8221;lastName\&#8221;:\&#8221;testsson\&#8221;,\&#8221;email\&#8221;:\&#8221;testman@mysite.se\&#8221;,\&#8221;dbs\&#8221;:[{\"dbName\":\"PeersDB\"}]}}&#8221;,<br />
+  &#8220;expires&#8221; : ISODate(&#8220;2014-02-24T15:50:44.25Z&#8221;)<br />
+}<br />
+After that time the document is deleted from the db.</p>
+<p>In this case I wrote after the log-on<br />
+  req.session.cookie.expires = 65000;</p>
+<p>But I still wonder. Must I regenerate the session ( I suppose if I don&#8217;t the session will end after the time). Please tell me how wrong I have.<br />
+Thanks</p>
+<p>Augusto</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-151</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-151</link>
+					<pubDate>Thu, 13 Feb 2014 19:28:52 +0000</pubDate>
+					<dc:creator>dstibrany</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I&#8217;m a little baffled at how the following works:</p>
+<p><code>req.session.name = &#039;Napoleon&#039;;</code></p>
+<p>This is written in a synchronous manner, but wouldn&#8217;t we have to do an async<br />
+call to store in mongo/redis/etc</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-140</guid>
+					<title><![CDATA[Replacement for bodyParser / connect.multipart()]]></title>
+					<link>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-140</link>
+					<pubDate>Sat, 01 Feb 2014 15:36:42 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you are using the <code>bodyParser</code> middleware for handling forms, you must be getting this warning message in your Express app.</p>
+<blockquote><p>
+<code><br />
+connect.multipart() will be removed in connect 3.0<br />
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives<br />
+connect.limit() will be removed in connect 3.0<br />
+</code>
+</p></blockquote>
+<p><b>Why this warning and how do you resolve it?</b></p>
+<p><code>bodyParser</code> is a composite middleware made up of <code>connect.json()</code>, <code>connect.urlencoded()</code>, and <code>connect.multipart()</code>. In Connect 3.0, developers will have to individually include the individual middlewares where required.</p>
+<p>However, there is a problem with <code>connect.multipart()</code>. It will be discontinued because of <a href="http://andrewkelley.me/post/do-not-use-bodyparser-with-express-js.html" rel="nofollow">security concerns</a>. It also is the source for the warning for about <code>connect.limit()</code>.</p>
+<p>You will need to find an alternative for <code>connect.multipart()</code>. You might come across <code>formidable</code>, <code>multiparty</code>, and <code>busboy</code> in the process. The stream-based <code>busboy</code>, is the most efficient of them all. However, its interface is a little too complicated for the average Node.js developer; same is the case with <code>connect-busboy</code>, its interface for Connect / Express.</p>
+<p>Introducing Multer, a very user-friendly replacement for <code>connect.multipart()</code>. Best part, it is written on top of <code>busboy</code>.</p>
+<p>So, how do you use Multer?</p>
+<p>Install the package:</p>
+<pre class="block">
+$ npm install multer
+</pre>
+<p>Load it in your app:</p>
+<pre class="block">
+var multer = require('multer');
+</pre>
+<p>And then, add it in the middleware stack along with the other form parsing middleware.</p>
+<pre class="block">
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(multer({ dest: './uploads/' }));
+</pre>
+<p><b><code>connect.json()</code></b> handles <code>application/json</code><br />
+<b><code>connect.urlencoded()</code></b> handles <code>application/x-www-form-urlencoded</code><br />
+<b><code>multer()</code></b> handles <code>multipart/form-data</code></p>
+<p>For details about Multer and its options, visit the <a href="https://github.com/hacksparrow/multer" rel="nofollow">project page on GitHub</a>.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-139</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-139</link>
+					<pubDate>Sat, 01 Feb 2014 14:18:18 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>You can initialize the session in the login route. Check if the user submitted the proper creds, and initialize the session accordingly.</p>
+<p>You can check if a session has ended by looking at session variables, which are expected to be there. If they are not present, there is no session.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-137</guid>
+					<title><![CDATA[Reply To: Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-137</link>
+					<pubDate>Wed, 29 Jan 2014 18:10:54 +0000</pubDate>
+					<dc:creator>modeef</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks, an interesting introduction.  I have a quick question about this.  Where is the best place to initialise a user&#8217;s session?  I.e. a user visits, they get a new session, I want to give them some default values&#8230; Also, where can I interact with the session at its start?  Is there a similar way to detect when a session ends?  Both of these events would be useful for logging, etc.  Many thanks!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-128</guid>
+					<title><![CDATA[Express.js Sessions &#8211; A Detailed Tutorial]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-js-sessions-a-detailed-tutorial/#post-128</link>
+					<pubDate>Thu, 21 Nov 2013 19:58:52 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I am making a part of this chapter available in the form of a tutorial on <strong>Express.js sessions</strong> for those who haven&#8217;t bought the book yet.</p>
+<h2>Sessions in Express.js</h2>
+<p>There are two broad ways of implementing sessions in Express – using cookies and using a session store at the backend. Both of them add a new object in the <code>request</code> object named <code>session</code>, which contains the session variables.</p>
+<p>No matter which method you use, Express provides a consistent interface for working with the session data.</p>
+<h3>Cookie-based Session</h3>
+<p>Using the fact that cookies can store data in the users browser, a sessions API can be implemented using cookies. Express comes with a built-in middleware called <code>cookieSession</code>, which does just that.</p>
+<p>Load the <code>cookieParser</code> middleware with a secret, followed by the <code>cookieSession</code> middleware, before the router middleware. The <code>cookieSession</code> middleware is dependent on the <code>cookieParser</code> middlware because it uses a cookie for storing the session data.</p>
+<p>The <code>cookieParser</code> middleware should be initialized with a secret, because <code>cookieSession</code> needs to generate a signed <strong>HttpOnly</strong> cookie for storing the session data. If you don’t specify a secret for <code>cookieParser</code>, you will need to specify the secret option of <code>cookieSsession</code>.</p>
+<p>The following is the code for enabling sessions in Express using the <code>cookieSession</code> middleware.</p>
+<pre class="block">
+app.use(express.cookieParser('S3CRE7'));
+app.use(express.cookieSession());
+app.use(app.router);
+</pre>
+<p>Although the <code>cookieSession</code> middleware can be initialized without any options, the middleware accepts an options object with the following possible options.</p>
+<pre>
+Option	Description
+-------------------
+key	Name of the cookie. Defaults to <code>connect.sess</code>.
+secret	Secret for signing the session. Required if <code>cookieParser</code> is not initialized with one.
+cookie	Session cookie settings. Regular cookie defaults apply.
+proxy	To trust the reverse proxy or not. Defaults to false.
+</pre>
+<p>Here is an example of initializing <code>cookieSession</code> with some options.</p>
+<pre class="block">
+app.use(express.cookieSession({
+  key: 'app.sess',
+  secret: 'SUPERsekret'
+}));
+</pre>
+<p>Once the session API is enabled, session variables can be accessed on the session object on the request object – <code>req.session</code>.</p>
+<p>Cookie-based sessions work great for simple session data. However, it doesn’t work well with large, complicated, and sensitive data because the session data is visible to the user, there is a limit in the size of cookies a browser can store, and multiple large size cookies can affect the performance of the website.</p>
+<p>The limitations in cookie-based sessions can be overcome by sessions based on session stores.</p>
+<h3>Session Store-based Session</h3>
+<p>A session store is a provision for storing session data in the backend. Sessions based on session stores can store a large amount of data that is well hidden from the user.</p>
+<p>The <code>session</code> middleware provides a way for creating sessions using session stores. Like <code>cookieSession</code>, the session middleware is dependent on the cookieParser middleware for creating a signed HttpOnly cookie.</p>
+<p>Initializing the <code>session</code> middlware is a lot like initializing <code>cookieSession</code> – we first load <code>cookieParser</code> with a secret, and load the <code>session</code> middleware, before the <code>router</code> middleware.</p>
+<pre class="block">
+app.use(express.cookieParser('S3CRE7'));
+app.use(express.session());
+app.use(app.router);
+</pre>
+<p>The session middleware accepts an options object which can be used for defining the options of the middleware. The following are the supported options.</p>
+<pre>
+Option	Description
+-------------------
+key	Name of the cookie. Defaults to connect.sid.
+store	Instance of a session store. Defaults to MemoryStore. The session store may supports options of its own.
+secret	Secret for signing session cookie. Required if not passed to cookieParser().
+cookie	Session cookie settings. Regular cookie defaults apply.
+proxy	To trust the reverse proxy or not. Defaults to false.
+</pre>
+<p>Here is an example of initializing the session middleware with some options.</p>
+<pre class="block">
+app.use(express.session({
+  key: 'app.sess',
+  store: new RedisStore,
+  secret: 'SEKR37'
+}));
+</pre>
+<p>The interface for accessing and working with the session variables remain the same – <code>req.session</code> &#8211; except now the session values reside on the backend.</p>
+<p>Let’s explore three popular session stores for Express.</p>
+<h4>MemoryStore</h4>
+<p>Express comes with a built-in session store called <strong>MemoryStore</strong>, which is the default when you don’t specify one explicitly.</p>
+<p>MemoryStore uses the application RAM for storing session data and works right out of the box, without the need for any database. Seeing how easily it is to set up, you might be tempted to make it the session store of your choice, but it is not recommended to do so because of the following reasons:</p>
+<p>1. Memory consumption will keep growing with each new session.<br />
+2. In case the app is restarted for any reason; all session data will be lost.<br />
+3. Session data cannot be shared by other instances of the app in a cluster.</p>
+<p>In fact, if you try to use MemoryStore in a production environment you will get the following warning.</p>
+<pre>
+<em>Warning: connection.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.</em>
+</pre>
+<p>Although MemoryStore is not a scalable solution and is not recommended on production, it makes for a good choice for getting to know the session API quickly and developing the application without the need for any database.</p>
+<h4>RedisStore</h4>
+<p>RedisStore is a popular third-party module which uses Redis for storing session data.</p>
+<p>Install RedisStore in the application directory.</p>
+<pre class="block">
+$ npm install connect-redis
+</pre>
+<p>Load the RedisStore module in the app and pass the instance of the Express object to it.</p>
+<pre class="block">
+var express = require('express');
+var RedisStore = require('connect-redis')(express);
+</pre>
+<p>With that, we are ready to use RedisStore as our session store – load the <code>session</code> middleware with its store option set to an instance of RedisStore.</p>
+<pre class="block">
+app.use(express.session({ store: new RedisStore }));
+</pre>
+<p>RedisStore accepts a configuration object which can be used for specifying various aspects of the session store.</p>
+<pre class="block">
+app.use(express.session({ store: new RedisStore({
+  host:'127.0.0.1',
+  port:6380,
+  prefix:'sess'
+}), secret: 'SEKR37' }));
+</pre>
+<p>Once you have set up RedisStore successfully, you can continue to work on the req.session object to create, read, update, and delete session variables as usual; only this time the data is stored on a Redis server – accessible by multiple instances of your app and persisting if your app is restarted.</p>
+<p>You can get more information about RedisStore at <a href="https://github.com/visionmedia/connect-redis" rel="nofollow">https://github.com/visionmedia/connect-redis</a>.</p>
+<h4>MongoStore</h4>
+<p>Another popular session store uses MongoDB for storing the data and is called MongoStore. The interface is very similar to RedisStore.</p>
+<p>Install MongoStore in the application directory.</p>
+<pre class="block">
+$ npm install connect-mongo
+</pre>
+<p>Load the MongoStore module in the app and set an instance of it as the session store for the <code>session</code> middleware.</p>
+<pre class="block">
+var express = require('express');
+var MongoStore = require('connect-mongo')(express);
+...
+app.use(express.session({
+  store: new MongoStore({
+    db: 'myapp',
+    host: '127.0.0.1',
+    port: 3355
+  })
+}));
+</pre>
+<p>With that, session data will now be stored in MongoDB, but the session interface remains the same – the req.session object.</p>
+<p>You can read more about MongoStore at <a href="https://github.com/kcbanner/connect-mongo" rel="nofollow">https://github.com/kcbanner/connect-mongo</a>.</p>
+<h3>Session Variables</h3>
+<p>Session variables are those variables, which you associate with a user session. These variables are independently set for each user and can be accessed on the session property of the request object &#8211; <code>req.session</code>.</p>
+<p>While it might look like we are dealing a JavaScript object, it is not completely true; the session variables actually reside in the data store of the session and the JavaScript object only works as a proxy for those values.<br />
+Operations on session variables are is basically working with JavaScript objects. The states of these objects are then updated on the session store.</p>
+<h4>Setting Session Variables</h4>
+<p>To set a session variable, attach it to the <code>req.session</code> object.</p>
+<pre class="block">
+req.session.name = 'Napoleon';
+</pre>
+<p>In case the session variable contains illegal characters, use the substring notation to create it.</p>
+<pre class="block">
+req.session['primary skill'] = 'Dancing';
+</pre>
+<h4>Reading Session Variables</h4>
+<p>Session variables can be read from the <code>res.session</code> object using either the dot notation or the substring notation.</p>
+<pre class="block">
+var name = req.session.name;
+var primary_skill = req.session['primary skill'];
+</pre>
+<p>If you try to read an undefined property, you will get <code>undefined</code> as expected.</p>
+<h4>Updating Session Variables</h4>
+<p>Updating a session variable is just about updating the property in the <code>req.session</code> object or overwriting the existing property with a new value.</p>
+<pre class="block">
+req.session.skills.push('Baking');
+req.session.name = 'Pedro';
+</pre>
+<h4>Deleting Session Variables</h4>
+<p>To delete a session variable just delete the property from the <code>req.session</code> object. </p>
+<pre class="block">
+delete req.session.name
+delete req.session['primary skill'];
+</pre>
+<h3>Deleting a Session</h3>
+<p>We learnt that there are two broad ways of creating sessions – using <code>cookieSession</code> and <code>sessionStore</code>. Each session type has its own way of deleting the session.</p>
+<h4>Deleting a Cookie-based Session</h4>
+<p>To delete a cookie-based session just delete the session object from the request object, or set it to null.</p>
+<pre class="block">
+delete req.session;
+</pre>
+<p>or</p>
+<pre class="block">
+req.session = null;
+</pre>
+<p>Once the session object is deleted, the session cookie is also deleted from the browser, effectively destroying the session.</p>
+<h4>Deleting a Session Store-based Session</h4>
+<p>Session store-based sessions do not interpret a missing session object on the request object as the end of a session. If we delete the session object from the request object, it will be recreated from the session store, because the session store decides the state of the session, not JavaScript variables. This also the reason why these sessions are intact even after the app restarts.</p>
+<p>Session store-based sessions has a method called <code>destroy()</code>, which is used for destroying sessions from the session store – the proper way of tearing down a session store-based session.</p>
+<pre class="block">
+req.session.destroy();
+</pre>
+<p>The <code>destroy()</code> method accepts an optional callback function to be executed after the session is cleared from the store.</p>
+<pre class="block">
+req.session.destroy(function() {
+  res.send('Session deleted');
+});
+</pre>
+<p>This brings us to the end of the tutorial. Any queries or questions, ping me in the comments.</p>
+<p><em>If you liked this tutorial, you will love my book &#8220;Express Web Application Development&#8221;. <a href="http://www.packtpub.com/express-web-application-development/book?utm_source=packtexpresswebapp.com&#038;utm_medium=link&#038;utm_content=other&#038;utm_campaign=mdb_010358" rel="nofollow">Go buy it</a>, it is your guide to mastering Express.</em></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/express-error-handler/#post-123</guid>
+					<title><![CDATA[Express error handler]]></title>
+					<link>http://expressjs-book.com/forums/topic/express-error-handler/#post-123</link>
+					<pubDate>Thu, 17 Oct 2013 18:20:52 +0000</pubDate>
+					<dc:creator>gdbtek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>this is a graceful error handler for Express applications and I think it might be useful for Express.js fan. </p>
+<p><a href="https://github.com/dilvie/express-error-handler" rel="nofollow">https://github.com/dilvie/express-error-handler</a></p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

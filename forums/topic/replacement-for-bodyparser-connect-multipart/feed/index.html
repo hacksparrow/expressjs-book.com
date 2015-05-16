@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+		<title>Express.js Book - Express Web Application Development  &#187;  Topic: Replacement for bodyParser / connect.multipart()</title>
+		<atom:link href="http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/feed/" rel="self" type="application/rss+xml" />
+		<link>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/feed/</link>
+		<description></description>
+		<pubDate>Sat, 16 May 2015 19:58:01 +0000</pubDate>
+		<generator>http://bbpress.org/?v=2.5.4-5380</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-140</guid>
+					<title><![CDATA[Replacement for bodyParser / connect.multipart()]]></title>
+					<link>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-140</link>
+					<pubDate>Sat, 01 Feb 2014 15:36:42 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If you are using the <code>bodyParser</code> middleware for handling forms, you must be getting this warning message in your Express app.</p>
+<blockquote><p>
+<code><br />
+connect.multipart() will be removed in connect 3.0<br />
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives<br />
+connect.limit() will be removed in connect 3.0<br />
+</code>
+</p></blockquote>
+<p><b>Why this warning and how do you resolve it?</b></p>
+<p><code>bodyParser</code> is a composite middleware made up of <code>connect.json()</code>, <code>connect.urlencoded()</code>, and <code>connect.multipart()</code>. In Connect 3.0, developers will have to individually include the individual middlewares where required.</p>
+<p>However, there is a problem with <code>connect.multipart()</code>. It will be discontinued because of <a href="http://andrewkelley.me/post/do-not-use-bodyparser-with-express-js.html" rel="nofollow">security concerns</a>. It also is the source for the warning for about <code>connect.limit()</code>.</p>
+<p>You will need to find an alternative for <code>connect.multipart()</code>. You might come across <code>formidable</code>, <code>multiparty</code>, and <code>busboy</code> in the process. The stream-based <code>busboy</code>, is the most efficient of them all. However, its interface is a little too complicated for the average Node.js developer; same is the case with <code>connect-busboy</code>, its interface for Connect / Express.</p>
+<p>Introducing Multer, a very user-friendly replacement for <code>connect.multipart()</code>. Best part, it is written on top of <code>busboy</code>.</p>
+<p>So, how do you use Multer?</p>
+<p>Install the package:</p>
+<pre class="block">
+$ npm install multer
+</pre>
+<p>Load it in your app:</p>
+<pre class="block">
+var multer = require('multer');
+</pre>
+<p>And then, add it in the middleware stack along with the other form parsing middleware.</p>
+<pre class="block">
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(multer({ dest: './uploads/' }));
+</pre>
+<p><b><code>connect.json()</code></b> handles <code>application/json</code><br />
+<b><code>connect.urlencoded()</code></b> handles <code>application/x-www-form-urlencoded</code><br />
+<b><code>multer()</code></b> handles <code>multipart/form-data</code></p>
+<p>For details about Multer and its options, visit the <a href="https://github.com/hacksparrow/multer" rel="nofollow">project page on GitHub</a>.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-154</guid>
+					<title><![CDATA[Reply To: Replacement for bodyParser / connect.multipart()]]></title>
+					<link>http://expressjs-book.com/forums/topic/replacement-for-bodyparser-connect-multipart/#post-154</link>
+					<pubDate>Sun, 30 Mar 2014 17:16:49 +0000</pubDate>
+					<dc:creator>Jon J</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>I created an example that uses Express &amp; Multer &#8211; very simple, avoids all Connect warnings</p>
+<p><a href="https://github.com/jonjenkins/express-upload" rel="nofollow">https://github.com/jonjenkins/express-upload</a></p>
+<p>Might help someone.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+		<title>Express.js Book - Express Web Application Development  &#187;  Topic: Cluster with session warning mesg</title>
+		<atom:link href="http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/feed/" rel="self" type="application/rss+xml" />
+		<link>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/feed/</link>
+		<description></description>
+		<pubDate>Sat, 16 May 2015 19:57:39 +0000</pubDate>
+		<generator>http://bbpress.org/?v=2.5.4-5380</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-83</guid>
+					<title><![CDATA[Cluster with session warning mesg]]></title>
+					<link>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-83</link>
+					<pubDate>Sun, 25 Aug 2013 08:40:21 +0000</pubDate>
+					<dc:creator>gdbtek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>If I use cluster with app.use(express.session());, I will get following warning mesg.</p>
+<p>Warning: connection.session() MemoryStore is not<br />
+designed for a production environment, as it will leak<br />
+memory, and will not scale past a single process.</p>
+<p>so does it means that I should not use session for cluster? Is there any workaround?</p>
+<p>Thanks</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-84</guid>
+					<title><![CDATA[Reply To: Cluster with session warning mesg]]></title>
+					<link>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-84</link>
+					<pubDate>Mon, 26 Aug 2013 08:29:39 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>MemoryStore is used for storing session data by default, which uses the app process&#8217; memory. Since cluster processes can&#8217;t share session data, they will all be working with their own individual copies of session. This will result in a very erratic behavior from the app.</p>
+<p>The workaround is to use an external memory store like RedisStore or MongoStore. You can read the details on page 184-185.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-89</guid>
+					<title><![CDATA[Reply To: Cluster with session warning mesg]]></title>
+					<link>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-89</link>
+					<pubDate>Mon, 26 Aug 2013 18:03:20 +0000</pubDate>
+					<dc:creator>gdbtek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Thanks Yaapa!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-96</guid>
+					<title><![CDATA[Reply To: Cluster with session warning mesg]]></title>
+					<link>http://expressjs-book.com/forums/topic/cluster-with-session-warning-mesg/#post-96</link>
+					<pubDate>Tue, 27 Aug 2013 05:15:45 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>Most welcome!</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+

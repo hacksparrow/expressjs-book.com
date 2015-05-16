@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<title>Express.js Sessions &#8211; A Detailed Tutorial</title>
+	<meta name="description" content="Express.js discussion forums" />
+	<meta name="keywords" content="express, express.js, book, forum, forums, nodejs, node.js" />
+<link rel="stylesheet" type="text/css" href="../../../wp-content/themes/ewad/style.css"></style>
+<script type="text/javascript" src="../../../wp-content/themes/ewad/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../wp-content/themes/ewad/main.js"></script>
+<link rel='stylesheet' id='bbp-default-css'  href='../../../wp-content/plugins/bbpress/templates/default/css/bbpress.css%3Fver=2.5.4-5380.css' type='text/css' media='screen' />
+<script type='text/javascript' src='http://expressjs-book.com/wp-includes/js/jquery/jquery.js?ver=1.11.0'></script>
+<script type='text/javascript' src='http://expressjs-book.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://expressjs-book.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='next' title='Confirmed Errata' href='../../../index.html%3Fp=27.html' />
+
+<link rel='shortlink' href='../../../index.html%3Fp=128.html' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<!-- All in One SEO Pack 2.2.2 by Michael Torbert of Semper Fi Web Design[144,178] -->
+<meta name="description"  content="I am making a part of this chapter available in the form of a tutorial on Express.js sessions for those who haven't bought the book yet. Sessions in" />
+
+<link rel="canonical" href="../../../index.html%3Fp=128.html" />
+<!-- /all in one seo pack -->
+</head>
+<body>
+<div id="toolbar">
+	<ul>
+		<li><a href="../../../index.html">HOME</a></li>
+		<li id="discussion"><a href="../../../forums.html"class="active">DISCUSSION</a></li>
+		<li id="join-us"></li>
+				<li id="signup"><a href="../../../wp-login.php%3Faction=register.html">Register</a></li>
+		<li id="login"><a href="../../../wp-login.php%3Fredirect_to=http%253A%252F%252Fexpressjs-book.com%252Fforums%252Ftopic%252Fexpress-js-sessions-a-detailed-tutorial%252F.html">Log In</a></li>
+			</ul>
+</div>
+
+<div id="wrapper">
+
+	
+					<div id="forum">
+					
+<div id="bbpress-forums">
+
+	<div class="bbp-breadcrumb"><p><a href="../../../index.html" class="bbp-breadcrumb-home">Home</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="../../../forums.html" class="bbp-breadcrumb-root">Forums</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <a href="../../../index.html%3Fp=19.html" class="bbp-breadcrumb-forum">Chapter 7: Forms, Cookies, and Sessions</a> <span class="bbp-breadcrumb-sep">&rsaquo;</span> <span class="bbp-breadcrumb-current">Express.js Sessions &#8211; A Detailed Tutorial</span></p></div>
+	
+	
+		<div class="bbp-topic-tags"><p>Tagged:&nbsp;<a href="../../topic-tag/cookie/index.html" rel="tag">cookie</a>, <a href="../../topic-tag/session/index.html" rel="tag">session</a>, <a href="../../topic-tag/sessions/index.html" rel="tag">sessions</a></p></div>
+		<div class="bbp-template-notice info"><p class="bbp-topic-description">This topic contains 6 replies, has 5 voices, and was last updated by <a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/ac96905ca7b25f0577e4bcc9c344afb6?s=14&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D14&amp;r=G' class='avatar avatar-14 photo' height='14' width='14' /></a>&nbsp;<a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-name" rel="nofollow">Yaapa</a> <a href="../../../index.html%3Fp=128.html#post-155" title="Reply To: Express.js Sessions &#8211; A Detailed Tutorial">1 year, 1 month ago</a>.</p></div>
+		
+		
+			
+
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">
+
+		Viewing 7 posts - 1 through 7 (of 7 total)
+	</div>
+
+	<div class="bbp-pagination-links">
+
+		
+	</div>
+</div>
+
+
+			
+
+<ul id="topic-128-replies" class="forums bbp-replies">
+
+	<li class="bbp-header">
+
+		<div class="bbp-reply-author">Author</div><!-- .bbp-reply-author -->
+
+		<div class="bbp-reply-content">
+
+			
+				Posts
+				
+				
+			
+		</div><!-- .bbp-reply-content -->
+
+	</li><!-- .bbp-header -->
+
+	<li class="bbp-body">
+
+		
+			
+				
+<div id="post-128" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">November 21, 2013 at 7:58 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-128" class="bbp-reply-permalink">#128</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-128 -->
+
+<div class="post-128 topic type-topic status-publish hentry odd bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-1 user-id-2 topic-author">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/ac96905ca7b25f0577e4bcc9c344afb6?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-name" rel="nofollow">Yaapa</a><br /><div class="bbp-author-role">Keymaster</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I am making a part of this chapter available in the form of a tutorial on <strong>Express.js sessions</strong> for those who haven&#8217;t bought the book yet.</p>
+<h2>Sessions in Express.js</h2>
+<p>There are two broad ways of implementing sessions in Express – using cookies and using a session store at the backend. Both of them add a new object in the <code>request</code> object named <code>session</code>, which contains the session variables.</p>
+<p>No matter which method you use, Express provides a consistent interface for working with the session data.</p>
+<h3>Cookie-based Session</h3>
+<p>Using the fact that cookies can store data in the users browser, a sessions API can be implemented using cookies. Express comes with a built-in middleware called <code>cookieSession</code>, which does just that.</p>
+<p>Load the <code>cookieParser</code> middleware with a secret, followed by the <code>cookieSession</code> middleware, before the router middleware. The <code>cookieSession</code> middleware is dependent on the <code>cookieParser</code> middlware because it uses a cookie for storing the session data.</p>
+<p>The <code>cookieParser</code> middleware should be initialized with a secret, because <code>cookieSession</code> needs to generate a signed <strong>HttpOnly</strong> cookie for storing the session data. If you don’t specify a secret for <code>cookieParser</code>, you will need to specify the secret option of <code>cookieSsession</code>.</p>
+<p>The following is the code for enabling sessions in Express using the <code>cookieSession</code> middleware.</p>
+<pre class="block">
+app.use(express.cookieParser('S3CRE7'));
+app.use(express.cookieSession());
+app.use(app.router);
+</pre>
+<p>Although the <code>cookieSession</code> middleware can be initialized without any options, the middleware accepts an options object with the following possible options.</p>
+<pre>
+Option	Description
+-------------------
+key	Name of the cookie. Defaults to <code>connect.sess</code>.
+secret	Secret for signing the session. Required if <code>cookieParser</code> is not initialized with one.
+cookie	Session cookie settings. Regular cookie defaults apply.
+proxy	To trust the reverse proxy or not. Defaults to false.
+</pre>
+<p>Here is an example of initializing <code>cookieSession</code> with some options.</p>
+<pre class="block">
+app.use(express.cookieSession({
+  key: 'app.sess',
+  secret: 'SUPERsekret'
+}));
+</pre>
+<p>Once the session API is enabled, session variables can be accessed on the session object on the request object – <code>req.session</code>.</p>
+<p>Cookie-based sessions work great for simple session data. However, it doesn’t work well with large, complicated, and sensitive data because the session data is visible to the user, there is a limit in the size of cookies a browser can store, and multiple large size cookies can affect the performance of the website.</p>
+<p>The limitations in cookie-based sessions can be overcome by sessions based on session stores.</p>
+<h3>Session Store-based Session</h3>
+<p>A session store is a provision for storing session data in the backend. Sessions based on session stores can store a large amount of data that is well hidden from the user.</p>
+<p>The <code>session</code> middleware provides a way for creating sessions using session stores. Like <code>cookieSession</code>, the session middleware is dependent on the cookieParser middleware for creating a signed HttpOnly cookie.</p>
+<p>Initializing the <code>session</code> middlware is a lot like initializing <code>cookieSession</code> – we first load <code>cookieParser</code> with a secret, and load the <code>session</code> middleware, before the <code>router</code> middleware.</p>
+<pre class="block">
+app.use(express.cookieParser('S3CRE7'));
+app.use(express.session());
+app.use(app.router);
+</pre>
+<p>The session middleware accepts an options object which can be used for defining the options of the middleware. The following are the supported options.</p>
+<pre>
+Option	Description
+-------------------
+key	Name of the cookie. Defaults to connect.sid.
+store	Instance of a session store. Defaults to MemoryStore. The session store may supports options of its own.
+secret	Secret for signing session cookie. Required if not passed to cookieParser().
+cookie	Session cookie settings. Regular cookie defaults apply.
+proxy	To trust the reverse proxy or not. Defaults to false.
+</pre>
+<p>Here is an example of initializing the session middleware with some options.</p>
+<pre class="block">
+app.use(express.session({
+  key: 'app.sess',
+  store: new RedisStore,
+  secret: 'SEKR37'
+}));
+</pre>
+<p>The interface for accessing and working with the session variables remain the same – <code>req.session</code> &#8211; except now the session values reside on the backend.</p>
+<p>Let’s explore three popular session stores for Express.</p>
+<h4>MemoryStore</h4>
+<p>Express comes with a built-in session store called <strong>MemoryStore</strong>, which is the default when you don’t specify one explicitly.</p>
+<p>MemoryStore uses the application RAM for storing session data and works right out of the box, without the need for any database. Seeing how easily it is to set up, you might be tempted to make it the session store of your choice, but it is not recommended to do so because of the following reasons:</p>
+<p>1. Memory consumption will keep growing with each new session.<br />
+2. In case the app is restarted for any reason; all session data will be lost.<br />
+3. Session data cannot be shared by other instances of the app in a cluster.</p>
+<p>In fact, if you try to use MemoryStore in a production environment you will get the following warning.</p>
+<pre>
+<em>Warning: connection.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.</em>
+</pre>
+<p>Although MemoryStore is not a scalable solution and is not recommended on production, it makes for a good choice for getting to know the session API quickly and developing the application without the need for any database.</p>
+<h4>RedisStore</h4>
+<p>RedisStore is a popular third-party module which uses Redis for storing session data.</p>
+<p>Install RedisStore in the application directory.</p>
+<pre class="block">
+$ npm install connect-redis
+</pre>
+<p>Load the RedisStore module in the app and pass the instance of the Express object to it.</p>
+<pre class="block">
+var express = require('express');
+var RedisStore = require('connect-redis')(express);
+</pre>
+<p>With that, we are ready to use RedisStore as our session store – load the <code>session</code> middleware with its store option set to an instance of RedisStore.</p>
+<pre class="block">
+app.use(express.session({ store: new RedisStore }));
+</pre>
+<p>RedisStore accepts a configuration object which can be used for specifying various aspects of the session store.</p>
+<pre class="block">
+app.use(express.session({ store: new RedisStore({
+  host:'127.0.0.1',
+  port:6380,
+  prefix:'sess'
+}), secret: 'SEKR37' }));
+</pre>
+<p>Once you have set up RedisStore successfully, you can continue to work on the req.session object to create, read, update, and delete session variables as usual; only this time the data is stored on a Redis server – accessible by multiple instances of your app and persisting if your app is restarted.</p>
+<p>You can get more information about RedisStore at <a href="https://github.com/visionmedia/connect-redis" rel="nofollow">https://github.com/visionmedia/connect-redis</a>.</p>
+<h4>MongoStore</h4>
+<p>Another popular session store uses MongoDB for storing the data and is called MongoStore. The interface is very similar to RedisStore.</p>
+<p>Install MongoStore in the application directory.</p>
+<pre class="block">
+$ npm install connect-mongo
+</pre>
+<p>Load the MongoStore module in the app and set an instance of it as the session store for the <code>session</code> middleware.</p>
+<pre class="block">
+var express = require('express');
+var MongoStore = require('connect-mongo')(express);
+...
+app.use(express.session({
+  store: new MongoStore({
+    db: 'myapp',
+    host: '127.0.0.1',
+    port: 3355
+  })
+}));
+</pre>
+<p>With that, session data will now be stored in MongoDB, but the session interface remains the same – the req.session object.</p>
+<p>You can read more about MongoStore at <a href="https://github.com/kcbanner/connect-mongo" rel="nofollow">https://github.com/kcbanner/connect-mongo</a>.</p>
+<h3>Session Variables</h3>
+<p>Session variables are those variables, which you associate with a user session. These variables are independently set for each user and can be accessed on the session property of the request object &#8211; <code>req.session</code>.</p>
+<p>While it might look like we are dealing a JavaScript object, it is not completely true; the session variables actually reside in the data store of the session and the JavaScript object only works as a proxy for those values.<br />
+Operations on session variables are is basically working with JavaScript objects. The states of these objects are then updated on the session store.</p>
+<h4>Setting Session Variables</h4>
+<p>To set a session variable, attach it to the <code>req.session</code> object.</p>
+<pre class="block">
+req.session.name = 'Napoleon';
+</pre>
+<p>In case the session variable contains illegal characters, use the substring notation to create it.</p>
+<pre class="block">
+req.session['primary skill'] = 'Dancing';
+</pre>
+<h4>Reading Session Variables</h4>
+<p>Session variables can be read from the <code>res.session</code> object using either the dot notation or the substring notation.</p>
+<pre class="block">
+var name = req.session.name;
+var primary_skill = req.session['primary skill'];
+</pre>
+<p>If you try to read an undefined property, you will get <code>undefined</code> as expected.</p>
+<h4>Updating Session Variables</h4>
+<p>Updating a session variable is just about updating the property in the <code>req.session</code> object or overwriting the existing property with a new value.</p>
+<pre class="block">
+req.session.skills.push('Baking');
+req.session.name = 'Pedro';
+</pre>
+<h4>Deleting Session Variables</h4>
+<p>To delete a session variable just delete the property from the <code>req.session</code> object. </p>
+<pre class="block">
+delete req.session.name
+delete req.session['primary skill'];
+</pre>
+<h3>Deleting a Session</h3>
+<p>We learnt that there are two broad ways of creating sessions – using <code>cookieSession</code> and <code>sessionStore</code>. Each session type has its own way of deleting the session.</p>
+<h4>Deleting a Cookie-based Session</h4>
+<p>To delete a cookie-based session just delete the session object from the request object, or set it to null.</p>
+<pre class="block">
+delete req.session;
+</pre>
+<p>or</p>
+<pre class="block">
+req.session = null;
+</pre>
+<p>Once the session object is deleted, the session cookie is also deleted from the browser, effectively destroying the session.</p>
+<h4>Deleting a Session Store-based Session</h4>
+<p>Session store-based sessions do not interpret a missing session object on the request object as the end of a session. If we delete the session object from the request object, it will be recreated from the session store, because the session store decides the state of the session, not JavaScript variables. This also the reason why these sessions are intact even after the app restarts.</p>
+<p>Session store-based sessions has a method called <code>destroy()</code>, which is used for destroying sessions from the session store – the proper way of tearing down a session store-based session.</p>
+<pre class="block">
+req.session.destroy();
+</pre>
+<p>The <code>destroy()</code> method accepts an optional callback function to be executed after the session is cleared from the store.</p>
+<pre class="block">
+req.session.destroy(function() {
+  res.send('Session deleted');
+});
+</pre>
+<p>This brings us to the end of the tutorial. Any queries or questions, ping me in the comments.</p>
+<p><em>If you liked this tutorial, you will love my book &#8220;Express Web Application Development&#8221;. <a href="http://www.packtpub.com/express-web-application-development/book?utm_source=packtexpresswebapp.com&#038;utm_medium=link&#038;utm_content=other&#038;utm_campaign=mdb_010358" rel="nofollow">Go buy it</a>, it is your guide to mastering Express.</em></p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-137" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">January 29, 2014 at 6:10 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-137" class="bbp-reply-permalink">#137</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-137 -->
+
+<div class="post-137 reply type-reply status-publish hentry even bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-2 user-id-272">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/modeef/index.html" title="View modeef&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/2c2d3ba09b819169bdc8bd6430984567?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/modeef/index.html" title="View modeef&#039;s profile" class="bbp-author-name" rel="nofollow">modeef</a><br /><div class="bbp-author-role">Participant</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks, an interesting introduction.  I have a quick question about this.  Where is the best place to initialise a user&#8217;s session?  I.e. a user visits, they get a new session, I want to give them some default values&#8230; Also, where can I interact with the session at its start?  Is there a similar way to detect when a session ends?  Both of these events would be useful for logging, etc.  Many thanks!</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-139" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">February 1, 2014 at 2:18 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-139" class="bbp-reply-permalink">#139</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-139 -->
+
+<div class="post-139 reply type-reply status-publish hentry odd bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-3 user-id-2 topic-author">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/ac96905ca7b25f0577e4bcc9c344afb6?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-name" rel="nofollow">Yaapa</a><br /><div class="bbp-author-role">Keymaster</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>You can initialize the session in the login route. Check if the user submitted the proper creds, and initialize the session accordingly.</p>
+<p>You can check if a session has ended by looking at session variables, which are expected to be there. If they are not present, there is no session.</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-151" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">February 13, 2014 at 7:28 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-151" class="bbp-reply-permalink">#151</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-151 -->
+
+<div class="post-151 reply type-reply status-publish hentry even bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-4 user-id-285">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/dstibrany/index.html" title="View dstibrany&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/fe298e86fb3a359f3840ca52bc06fc00?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/dstibrany/index.html" title="View dstibrany&#039;s profile" class="bbp-author-name" rel="nofollow">dstibrany</a><br /><div class="bbp-author-role">Participant</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>I&#8217;m a little baffled at how the following works:</p>
+<p><code>req.session.name = &#039;Napoleon&#039;;</code></p>
+<p>This is written in a synchronous manner, but wouldn&#8217;t we have to do an async<br />
+call to store in mongo/redis/etc</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-152" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">February 24, 2014 at 3:58 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-152" class="bbp-reply-permalink">#152</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-152 -->
+
+<div class="post-152 reply type-reply status-publish hentry odd bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-5 user-id-297">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/augusto-renelunanegra-net/index.html" title="View augusto.rene@lunanegra.net&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/80dfec274f0acb16f93f9d4152b4dbc1?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/augusto-renelunanegra-net/index.html" title="View augusto.rene@lunanegra.net&#039;s profile" class="bbp-author-name" rel="nofollow">augusto.rene@lunanegra.net</a><br /><div class="bbp-author-role">Participant</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>Thanks for the book is really grate.<br />
+I wonder about the TTL. I can&#8217;t find a good and clear documentation for connect-mongo and ofte is confusing.&#8221;expires&#8221;, &#8220;originalMaxAge&#8221; and  &#8220;cookie.expires&#8221;.<br />
+ It would be nice if you take a couple of examples how to configure the duration. I can see that MongoDB store the session like:<br />
+{<br />
+  &#8220;_id&#8221; : &#8220;jvi555cr9lQGe3+kR0Q0c/wP&#8221;,<br />
+  &#8220;session&#8221; : &#8220;{\&#8221;cookie\&#8221;:{\&#8221;originalMaxAge\&#8221;:65000,\&#8221;expires\&#8221;:\&#8221;2014-02-24T15:50:44.250Z\&#8221;,\&#8221;httpOnly\&#8221;:true,\&#8221;path\&#8221;:\&#8221;/\&#8221;},\&#8221;user\&#8221;:{\&#8221;firstName\&#8221;:\&#8221;Testman\&#8221;,\&#8221;lastName\&#8221;:\&#8221;testsson\&#8221;,\&#8221;email\&#8221;:\&#8221;testman@mysite.se\&#8221;,\&#8221;dbs\&#8221;:[{\"dbName\":\"PeersDB\"}]}}&#8221;,<br />
+  &#8220;expires&#8221; : ISODate(&#8220;2014-02-24T15:50:44.25Z&#8221;)<br />
+}<br />
+After that time the document is deleted from the db.</p>
+<p>In this case I wrote after the log-on<br />
+  req.session.cookie.expires = 65000;</p>
+<p>But I still wonder. Must I regenerate the session ( I suppose if I don&#8217;t the session will end after the time). Please tell me how wrong I have.<br />
+Thanks</p>
+<p>Augusto</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-153" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">March 23, 2014 at 7:26 pm</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-153" class="bbp-reply-permalink">#153</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-153 -->
+
+<div class="post-153 reply type-reply status-publish hentry even bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-6 user-id-389">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/shawninder/index.html" title="View shawninder&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://1.gravatar.com/avatar/1e65caee75d971efece69c3e026275b4?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/shawninder/index.html" title="View shawninder&#039;s profile" class="bbp-author-name" rel="nofollow">shawninder</a><br /><div class="bbp-author-role">Participant</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>You give examples for using Redis and Mongo as stores for sessions. Would it be possible to use MySQL?</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+				
+<div id="post-155" class="bbp-reply-header">
+
+	<div class="bbp-meta">
+
+		<span class="bbp-reply-post-date">April 6, 2014 at 5:33 am</span>
+
+		
+		<a href="../../../index.html%3Fp=128.html#post-155" class="bbp-reply-permalink">#155</a>
+
+		
+		<span class="bbp-admin-links"></span>
+		
+	</div><!-- .bbp-meta -->
+
+</div><!-- #post-155 -->
+
+<div class="post-155 reply type-reply status-publish hentry odd bbp-parent-forum-19 bbp-parent-topic-128 bbp-reply-position-7 user-id-2 topic-author">
+
+	<div class="bbp-reply-author">
+
+		
+		<a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-avatar" rel="nofollow"><img alt='' src='http://0.gravatar.com/avatar/ac96905ca7b25f0577e4bcc9c344afb6?s=80&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' /></a><br /><a href="../../users/captain/index.html" title="View Yaapa&#039;s profile" class="bbp-author-name" rel="nofollow">Yaapa</a><br /><div class="bbp-author-role">Keymaster</div>
+		
+		
+	</div><!-- .bbp-reply-author -->
+
+	<div class="bbp-reply-content">
+
+		
+		<p>It would be definitely possible, but I am not aware of any implementation yet. The reason Redis and MongoDB are chosen is because they are faster and simpler to set up than MySQL, for data set like user sessions.</p>
+
+		
+	</div><!-- .bbp-reply-content -->
+
+</div><!-- .reply -->
+
+			
+		
+	</li><!-- .bbp-body -->
+
+	<li class="bbp-footer">
+
+		<div class="bbp-reply-author">Author</div>
+
+		<div class="bbp-reply-content">
+
+			
+				Posts
+			
+		</div><!-- .bbp-reply-content -->
+
+	</li><!-- .bbp-footer -->
+
+</ul><!-- #topic-128-replies -->
+
+
+			
+
+<div class="bbp-pagination">
+	<div class="bbp-pagination-count">
+
+		Viewing 7 posts - 1 through 7 (of 7 total)
+	</div>
+
+	<div class="bbp-pagination-links">
+
+		
+	</div>
+</div>
+
+
+		
+		<div id="advts-block" style="width: 728px; margin: 0 auto 20px">
+	<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- EWAD-LB0 -->
+	<ins class="adsbygoogle"
+	     style="display:inline-block;width:728px;height:90px"
+	     data-ad-client="ca-pub-0762366973631369"
+	     data-ad-slot="9857477349"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
+
+
+
+	<div id="no-reply-128" class="bbp-no-reply">
+		<div class="bbp-template-notice">
+			<p>You must be logged in to reply to this topic.</p>
+		</div>
+	</div>
+
+
+
+	
+	
+</div>
+			</div>
+		
+	
+				<div id="footer">
+			Copyright &copy; 2015 <a rel="author" href="https://plus.google.com/103752924219473791252" target="_blank" title="Google +">Hage Yaapa</a>
+			<div id="twitter"><a href="https://twitter.com/hacksparrow">@hacksparrow <img src="../../../wp-content/themes/ewad/twitter.png" /></a></div>
+			</div>
+
+			<script type='text/javascript' src='../../../wp-content/plugins/bbpress/templates/default/js/editor.js%3Fver=2.5.4-5380'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var bbpTopicJS = {"bbp_ajaxurl":"http:\/\/expressjs-book.com\/forums\/topic\/express-js-sessions-a-detailed-tutorial\/?bbp-ajax=true","generic_ajax_error":"Something went wrong. Refresh your browser and try again.","is_user_logged_in":"","fav_nonce":"193e90dcea","subs_nonce":"90350ba01d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../wp-content/plugins/bbpress/templates/default/js/topic.js%3Fver=2.5.4-5380'></script>
+		</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42449377-1', 'expressjs-book.com');
+  ga('send', 'pageview');
+
+</script>
+
+	</body>
+</html>

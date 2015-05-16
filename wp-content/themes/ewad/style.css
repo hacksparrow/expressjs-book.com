@@ -1,0 +1,347 @@
+/* 
+	Theme Name: EWAD
+	Theme URI: http://www.hacksparrow.com
+	Description: Special theme for EWAD
+	Author: Hage Yaapa
+	Author URI: http://www.hacksparrow.com
+	Version: 0.1
+*/
+
+@font-face {
+	font-family: 'Conv_gia';
+	src: url('fonts/gia.eot');
+	src: local('☺'), url('fonts/gia.woff') format('woff'), url('fonts/gia.ttf') format('truetype'), url('fonts/gia.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+pre.codeblock {
+	display: block;
+	background: #eee8d9;
+	padding: 0 20px 20px;
+	font: normal 14px "Courier New";
+	border-radius: 5px;
+	overflow: auto;
+	padding: 10px !important;
+	margin-bottom: 12px;
+	border: 1px solid #e9dec4 !important;
+}
+
+form { padding: 0; margin: 0;}
+html{color:#3f3f3f;background:#FFF;}
+
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background: url('doc-bg.png');
+	font: normal 14px Arial, sans-serif;
+	background-attachment: fixed;
+}
+
+a {
+	color: #007bbb;
+	text-decoration: none;
+}
+
+ul, ol {
+	margin: 0;
+}
+
+#toolbar {
+	width: 100%;
+	height: 50px;
+	background: url('toolbar-bg.png');
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+
+#toolbar a {
+	color: #d69e68;
+}
+
+#toolbar a:hover {
+	color: #ff8f08;
+}
+
+#toolbar a.active {
+	color: #ff8f08;
+}
+
+#toolbar ul {
+	width: 805px;
+	margin: 0 auto;
+	padding-left: 60px;
+	margin-top: 15px;
+	position: relative;
+}
+
+#toolbar li {
+	float: left;
+	list-style: none;
+	margin-right: 25px;
+}
+
+#join-us {
+	width: 50px;
+	height: 13px;
+	background: url('join-us.png') no-repeat;
+	position: relative;
+	left: -20px;
+	top: 2px;
+	display: none;
+}
+
+#signup, #login, #user, #logout {
+	position: absolute;
+	top: 2px;
+}
+
+#signup, #user {
+	right: 97px;
+}
+
+#login, #logout {
+	right: 37px;
+}
+
+#user {
+	color: #e5d0b9;
+}
+
+#wrapper {
+	width: 805px;
+	margin: 0 auto;
+	margin-top: 45px;
+	position: relative;
+	background: #fff;
+}
+
+#hero {
+	background: url('wood-bg.jpg');
+	height: 397px;
+	position: relative;
+}
+
+#hero h1, #hero h2 {
+	position: absolute;
+	left: 30px;
+	font-family:'Conv_gia', Sans-Serif;
+	color: #fff;
+	text-shadow: 1px 1px 1px #111;
+	width: 400px;
+	line-height: 40px;
+}
+
+#hero h1 {
+	font-size: 40px;
+	top: 39px;
+}
+
+#hero h2 {
+	font-size: 21px;
+	top: 215px;
+}
+
+#buttons {
+	position: absolute;
+	left: 29px;
+	top: 317px;
+}
+
+#slug {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	background: url('slug-bg.png');
+	padding: 10px;
+	border-radius: 5px;
+	width: 725px;
+}
+
+#slug img {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	top: 4px;
+}
+
+#book {
+	position: absolute;
+	right: 30px;
+	top: 20px;
+	z-index: 3;
+}
+
+#toc {
+	padding: 30px 30px 50px;
+}
+
+#toc h2 {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#toc ul {
+	margin-bottom: 30px;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+#toc li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 17px;
+}
+
+.sup-img {
+	position: relative;
+	top: -5px;
+}
+
+#footer {
+	border-top: 1px dotted #c38d55;
+	padding: 70px 20px 30px;
+	font-size: 12px;
+}
+
+#twitter {
+	position: relative;
+	right: 11px;
+	top: -10px;
+	float: right;
+}
+
+#twitter img {
+	position: relative;
+	left: 3px;
+	top: 6px;
+}
+
+h2.bright {
+	color: #F7CC6F !important;
+}
+
+h2 a {
+	color: #F9C459;
+}
+
+h2 a:hover {
+	text-decoration: underline;
+}
+
+#featured-tweet {
+	float: right;
+	padding-left: 20px;
+}
+
+/* Override BBPress */
+
+
+#forum {
+	padding: 10px 30px;
+}
+
+#bbpress-forums {
+	font-size: 14px;
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar, #bbpress-forums ul.bbp-reply-revision-log img.avatar, #bbpress-forums ul.bbp-topic-revision-log img.avatar, #bbpress-forums div.bbp-template-notice img.avatar, #bbpress-forums .widget_display_topics img.avatar, #bbpress-forums .widget_display_replies img.avatar, #bbpress-forums p.bbp-topic-meta img.avatar {
+    border: 1px solid #ddd !important;
+    float: none !important;
+    margin-bottom: -4px !important;
+}
+
+li.bbp-forum-freshness, li.bbp-topic-freshness {
+	text-align: left !important;
+}
+
+#bbpress-forums {
+	font-size: 14px !important;
+}
+
+#bbpress-forums ul.bbp-lead-topic, #bbpress-forums ul.bbp-topics, #bbpress-forums ul.bbp-forums, #bbpress-forums ul.bbp-replies, #bbpress-forums ul.bbp-search-results {
+    font-size: 14px !important;
+}
+
+div.bbp-breadcrumb {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+#bbpress-forums div.bbp-search-form {
+    position: relative;
+    top: 33px;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content, #bbpress-forums p.bbp-topic-meta {
+    font-size: 12px !important;
+}
+
+#bbpress-forums fieldset.bbp-form {
+		padding: 0 !important;
+    margin: 0 !important;
+}
+
+#bbp_topic_title, #bbp_topic_tags {
+	width: 732px;
+	padding: 5px 3px;
+}
+
+#bbpress-forums fieldset.bbp-form label {
+    margin: 2px !important;
+}
+
+#bbpress-forums div.bbp-forum-content, #bbpress-forums div.bbp-topic-content, #bbpress-forums div.bbp-reply-content {
+    padding: 0 !important;
+}
+
+.bbp-pagination-count {
+	font-style: italic;
+}
+
+#bbpress-forums .bbp-breadcrumb {
+	width: 100%;
+}
+
+#bbpress-forums div.bbp-topic-tags {
+	float: none !important;
+}
+
+.bbp-footer {
+	display: none !important;
+}
+
+#bbpress-forums {
+	margin: 30px 0 0 !important;
+}
+
+#bbpress-forums div.bbp-topic-content code, #bbpress-forums div.bbp-reply-content code, #bbpress-forums div.bbp-topic-content pre, #bbpress-forums div.bbp-reply-content pre {
+	border: none !important;
+}
+
+pre.block {
+	display: block !important;
+	background: #eee8d9 !important;
+	padding: 10px !important;
+	font: normal 14px "Courier New" !important;
+	border-radius: 5px !important;
+	overflow: auto !important;
+	padding: 10px !important !important;
+	margin-bottom: 12px !important;
+	border: 1px solid #e9dec4 !important !important;
+}
+
+a.bbp-forum-title, a.bbp-topic-title, a.bbp-topic-permalink {
+	font-size: 16px;
+	color: #4F4F4F;
+	font-weight: bold;
+}
+
+.bbp-forum-freshness a, .bbp-topic-freshness a, .bbp-topic-meta a, a.bbp-author-name {
+	color: #4F4F4F;
+}

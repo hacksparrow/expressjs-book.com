@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+
+			>
+
+	<channel>
+		<title>Express.js Book - Express Web Application Development  &#187;  Topic: Domain handler on error handler</title>
+		<atom:link href="http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/feed/" rel="self" type="application/rss+xml" />
+		<link>http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/feed/</link>
+		<description></description>
+		<pubDate>Sat, 16 May 2015 19:58:32 +0000</pubDate>
+		<generator>http://bbpress.org/?v=2.5.4-5380</generator>
+		<language>en-US</language>
+
+		
+														
+					
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/#post-81</guid>
+					<title><![CDATA[Domain handler on error handler]]></title>
+					<link>http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/#post-81</link>
+					<pubDate>Sat, 24 Aug 2013 21:01:08 +0000</pubDate>
+					<dc:creator>gdbtek</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>On page 202, here is the sample code to handle error on domain. However, I don&#8217;t quite understand the whole example. I looked at sample at <a href="http://nodejs.org/api/domain.html" rel="nofollow">http://nodejs.org/api/domain.html</a> but this do not use express. Can you provide full sample for following sample?</p>
+<pre><code>// Domain error handler
+d.on(&#039;error&#039;, function(err) {
+// Stop accepting new connections
+server.close();
+// Perform last-minute cleanup
+res.send(500);
+// Let the master know the worker has disconnected
+cluster.worker.disconnect();
+// Terminate the process in 5 seconds
+setTimeout(function() {
+// Exit with a failure code
+process.process.exit(1);
+}, 5000);
+});</code></pre>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+			
+				<item>
+					<guid>http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/#post-87</guid>
+					<title><![CDATA[Reply To: Domain handler on error handler]]></title>
+					<link>http://expressjs-book.com/forums/topic/domain-handler-on-error-handler/#post-87</link>
+					<pubDate>Mon, 26 Aug 2013 08:49:02 +0000</pubDate>
+					<dc:creator>Yaapa</dc:creator>
+
+					<description>
+						<![CDATA[
+						<p>The example on Page no. 201 is a complete example using an Express app.</p>
+						]]>
+					</description>
+
+					
+					
+				</item>
+
+					
+		
+	</channel>
+	</rss>
+
